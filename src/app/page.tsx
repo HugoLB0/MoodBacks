@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -53,8 +55,75 @@ import {
 import { DataTable } from "./payments/data-table";
 import {columns} from "./payments/columns"; 
 
+import Graph1 from "@/components/ui/graph1";
+import Graph2 from "@/components/ui/graph2"
+import Graph3 from "@/components/ui/graph3"
+
 
 const data = [
+  {
+    id: "1",
+    rating: 5,
+    recommend: "TRUE",
+    email: "test@mail.com" ,
+    textFeedback: "Good"
+  },
+  {
+    id: "1",
+    rating: 5,
+    recommend: "TRUE",
+    email: "test@mail.com" ,
+    textFeedback: "Good"
+  },
+  {
+    id: "1",
+    rating: 5,
+    recommend: "TRUE",
+    email: "test@mail.com" ,
+    textFeedback: "Good"
+  },
+  {
+    id: "1",
+    rating: 5,
+    recommend: "TRUE",
+    email: "test@mail.com" ,
+    textFeedback: "Good"
+  },
+  {
+    id: "1",
+    rating: 5,
+    recommend: "TRUE",
+    email: "test@mail.com" ,
+    textFeedback: "Good"
+  },
+  {
+    id: "1",
+    rating: 5,
+    recommend: "TRUE",
+    email: "test@mail.com" ,
+    textFeedback: "Good"
+  },
+  {
+    id: "1",
+    rating: 5,
+    recommend: "TRUE",
+    email: "test@mail.com" ,
+    textFeedback: "Good"
+  },
+  {
+    id: "1",
+    rating: 5,
+    recommend: "TRUE",
+    email: "test@mail.com" ,
+    textFeedback: "Good"
+  },
+  {
+    id: "1",
+    rating: 5,
+    recommend: "TRUE",
+    email: "test@mail.com" ,
+    textFeedback: "Good"
+  },
   {
     id: "1",
     rating: 5,
@@ -112,7 +181,7 @@ export default function Dashboard() {
           </TooltipProvider>
         </nav>
       </aside>
-      <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+      <div className="border border-yellow flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
         <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
           <Sheet>
             <SheetTrigger asChild>
@@ -169,48 +238,17 @@ export default function Dashboard() {
             </SheetContent>
           </Sheet>
         </header>
-        <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3">
-          <div className="grid auto-rows-max items-start gap-2 md:gap-6 lg:col-span-2">
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-              <Card className="sm:col-span-2">
-                <CardHeader className="pb-3">
-                  <CardTitle>Your Orders</CardTitle>
-                  <CardDescription className="max-w-lg text-balance leading-relaxed">
-                    Introducing Our Dynamic Orders Dashboard for Seamless
-                    Management and Insightful Analysis.
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <Button>Create New Order</Button>
-                </CardFooter>
+        <main className=" grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3 h-full">
+          <div className=" grid auto-rows-max items-start gap-2 md:gap-6 lg:col-span-2">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3 min-h-52">
+              <Card>
+                <Graph1 />
               </Card>
               <Card>
-                <CardHeader className="pb-2">
-                  <CardDescription>This Week</CardDescription>
-                  <CardTitle className="text-4xl">$1329</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-xs text-muted-foreground">
-                    +25% from last week
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Progress value={25} aria-label="25% increase" />
-                </CardFooter>
+                <Graph2 />
               </Card>
               <Card>
-                <CardHeader className="pb-2">
-                  <CardDescription>This Month</CardDescription>
-                  <CardTitle className="text-3xl">$5,329</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-xs text-muted-foreground">
-                    +10% from last month
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Progress value={12} aria-label="12% increase" />
-                </CardFooter>
+                <Graph3 />
               </Card>
             </div>
             <Tabs defaultValue="week">
@@ -229,7 +267,7 @@ export default function Dashboard() {
             </Tabs>
           </div>
           <div>
-            <Card className="overflow-hidden h-screen">
+            <Card className="flex flex-col justify-between overflow-hidden h-[724px]">
               <CardHeader className="flex flex-row items-start bg-muted/50">
                 <div className="grid gap-0.5">
                   <CardTitle className="group flex items-center gap-2 text-lg">
@@ -268,7 +306,10 @@ export default function Dashboard() {
                   </DropdownMenu>
                 </div>
               </CardHeader>
-              <CardContent className="p-6 text-sm flex flex-col justify-between"></CardContent>
+              <CardContent className="px-6 py-8 text-sm flex justify-between items-center gap-4">
+                <input type="text" placeholder="Ecrivez quelque chose..." className=" border border-gray-300 p-4 rounded-xl w-full" />
+                <Button className="h-full w-20">Go</Button>
+              </CardContent>
             </Card>
           </div>
         </main>
