@@ -18,16 +18,14 @@ const data = [
 export default class Example extends PureComponent {
   render() {
     return (
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="60%">
         <BarChart
           width={500}
-          height={300}
+          height={350}
           data={data}
           margin={{
-            top: 20,
-            right: 30,
-            left: 20,
-            bottom: 5,
+            right: 50,
+            left: 10,
           }}
         >
 
@@ -35,8 +33,8 @@ export default class Example extends PureComponent {
           <YAxis />
 
 
-          <Bar dataKey="locationA" fill="#000000" name="Location A" />
-          <Bar dataKey="locationB" fill="#D1D1D1" name="Location B" />
+          <Bar dataKey="locationA" fill="#8E74DB" name="Location A" />
+          <Bar dataKey="locationB" fill="#363049" name="Location B" />
         </BarChart>
       </ResponsiveContainer>
     );

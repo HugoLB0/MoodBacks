@@ -6,27 +6,27 @@ import { ColumnDef } from "@tanstack/react-table"
 // You can use a Zod schema here if you want.
 export type Payment = {
   id: string
-  rating: number
-  recommend: "TRUE" | "FALSE"
-  email: string
-  textFeedback: string
+  feedbacks: number
+  percent_good_review: number
+  name: string
+  creation_date: string
 }
 
 export const columns: ColumnDef<Payment>[] = [
   {
-    accessorKey: "email",
-    header: "Email",
+    accessorKey: "name",
+    header: "Name",
   },
   {
-    accessorKey: "rating",
-    header: "User rating",
+    accessorKey: "feedbacks",
+    header: "Feedbacks",
   },
   {
-    accessorKey: "recommend",
-    header: "Recommend",
+    accessorKey: "percent_good_review",
+    header: "% of good reviews",
   },
   {
-    accessorKey: "textFeedback",
-    header: "Feedback",
-  },
+    accessorKey: "creation_date",
+    header: "Creation Date",
+  }
 ]

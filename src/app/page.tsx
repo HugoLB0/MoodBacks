@@ -1,34 +1,25 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ChevronLeft,
-  ChevronRight,
   Copy,
-  File,
   Home,
   LineChart,
-  ListFilter,
   MoreVertical,
   Package,
   Package2,
   PanelLeft,
-  Search,
-  Settings,
   ShoppingCart,
-  Truck,
   Users2,
   RefreshCcw,
+  Mic
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -40,149 +31,64 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { Progress } from "@/components/ui/progress";
-
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  TooltipProvider,
-} from "@/components/ui/tooltip";
-
 
 import { DataTable } from "./payments/data-table";
-import {columns} from "./payments/columns"; 
+import { columns } from "./payments/columns";
 
 import Graph1 from "@/components/ui/graph1";
-import Graph2 from "@/components/ui/graph2"
-import Graph3 from "@/components/ui/graph3"
-
+import Graph2 from "@/components/ui/graph2";
+import Graph3 from "@/components/ui/graph3";
+import Navbar from "@/components/ui/navbar";
 
 const data = [
   {
     id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
+    feedbacks: 5,
+    percent_good_review: 80,
+    name: "AIR MAX",
+    creation_date: "05/04/24",
   },
   {
     id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
+    feedbacks: 5,
+    percent_good_review: 80,
+    name: "AIR FORCE",
+    creation_date: "05/04/24",
   },
   {
     id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
+    feedbacks: 5,
+    percent_good_review: 80,
+    name: "Maillot FFF exterior game",
+    creation_date: "05/04/24",
   },
   {
     id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
+    feedbacks: 5,
+    percent_good_review: 80,
+    name: "TN",
+    creation_date: "05/04/24",
   },
   {
     id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
+    feedbacks: 5,
+    percent_good_review: 80,
+    name: "Sweet Collection",
+    creation_date: "05/04/24",
   },
-  {
-    id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
-  },
-  {
-    id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
-  },
-  {
-    id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
-  },
-  {
-    id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
-  },
-  {
-    id: "1",
-    rating: 5,
-    recommend: "TRUE",
-    email: "test@mail.com" ,
-    textFeedback: "Good"
-  },
-]
-
-
-
+];
 
 export default function Dashboard() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40">
-      <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
-        <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
-          <Link
-            href="/dashboard"
-            className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
-          >
-            <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
-            <span className="sr-only">Acme Inc</span>
-          </Link>
-
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href="/orders"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-                >
-                  <Home className="h-5 w-5" />
-                  <span className="sr-only">Orders</span>
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent side="right">Orders</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </nav>
-        <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href="/settings"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-                >
-                  <Settings className="h-5 w-5" />
-                  <span className="sr-only">Settings</span>
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent side="right">Settings</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </nav>
-      </aside>
-      <div className="border border-yellow flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-        <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+    <div className="bg-backgroundbg min-h-screen w-full bg-muted/40">
+      <Navbar />
+      <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14 h-screen justify-center">
+        <header
+          id="header-burger-menu"
+          className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6"
+        >
           <Sheet>
             <SheetTrigger asChild>
               <Button size="icon" variant="outline" className="sm:hidden">
@@ -238,36 +144,48 @@ export default function Dashboard() {
             </SheetContent>
           </Sheet>
         </header>
-        <main className=" grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3 h-full">
-          <div className=" grid auto-rows-max items-start gap-2 md:gap-6 lg:col-span-2">
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3 min-h-52">
-              <Card>
+        <div className="flex justify-end"><h1 className="mr-32 text-3xl bg-[#363049] text-[#D174DB] py-2 px-8 rounded-full font-[Candu] uppercase">Nike</h1></div>
+        <main
+          id="main-content"
+          className="grid gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 h-[800px]"
+        >
+          <div
+            id="left-container"
+            className="grid auto-rows-max items-start gap-2 md:gap-6 lg:col-span-2 h-64"
+          >
+            <div
+              id="graphs"
+              className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3 min-h-52"
+            >
+              <Card className="h-64">
+                <CardDescription className="pb-8 text-title">Number of feedbacks per rating</CardDescription>
+                <span></span>
                 <Graph1 />
               </Card>
-              <Card>
+              <Card className="h-64">
+                <CardDescription className="pb-8 text-title">Ratio good and bad feedbacks </CardDescription>
                 <Graph2 />
               </Card>
-              <Card>
+              <Card className="h-64">
+                <CardDescription className="pb-8 text-title">People's emotions</CardDescription>
                 <Graph3 />
               </Card>
             </div>
-            <Tabs defaultValue="week">
+            <Tabs defaultValue="week" id="publicities">
               <TabsContent value="week">
                 <Card>
                   <CardHeader className="px-7">
-                    <CardTitle>Orders</CardTitle>
+                    <CardTitle className="text-title">Publicities</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <DataTable columns={columns} data={data} />
-
-
                   </CardContent>
                 </Card>
               </TabsContent>
             </Tabs>
           </div>
           <div>
-            <Card className="flex flex-col justify-between overflow-hidden h-[724px]">
+            <Card id="chat-ia" className="h-full flex flex-col justify-between bg-[#ffffff]">
               <CardHeader className="flex flex-row items-start bg-muted/50">
                 <div className="grid gap-0.5">
                   <CardTitle className="group flex items-center gap-2 text-lg">
@@ -307,8 +225,13 @@ export default function Dashboard() {
                 </div>
               </CardHeader>
               <CardContent className="px-6 py-8 text-sm flex justify-between items-center gap-4">
-                <input type="text" placeholder="Ecrivez quelque chose..." className=" border border-gray-300 p-4 rounded-xl w-full" />
-                <Button className="h-full w-20">Go</Button>
+                <input
+                  type="text"
+                  placeholder="Write something..."
+                  className=" border border-gray-300 p-4 rounded-xl w-full outline-[#747CDB]"
+                />
+                <Button className="h-full w-20 bg-[#747CDB] outline-[#747CDB]"><Mic /></Button>
+                <Button className="h-full w-20 bg-[#747CDB] outline-[#747CDB]">Go</Button>
               </CardContent>
             </Card>
           </div>

@@ -7,7 +7,7 @@ const data = [
     {
       subject: 'Neutral',
       A: 120,
-      B: 110,
+      B: 100,
       fullMark: 150,
     },
     {
@@ -42,12 +42,12 @@ const data = [
   
     render() {
       return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="60%">
           <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
             <PolarGrid />
-            <PolarAngleAxis dataKey="subject" />
+            <PolarAngleAxis dataKey="subject" className='text-sm' />
 
-            <Radar name="Mike" dataKey="A" stroke="#000000" fill="#000000" fillOpacity={0.6} />
+            <Radar name="Mike" dataKey="A" stroke="#000000" fill="#8272B0" fillOpacity={0.6} />
           </RadarChart>
         </ResponsiveContainer>
       );
