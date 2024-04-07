@@ -82,7 +82,7 @@ const data = [
 
 export default function Dashboard() {
   return (
-    <div className="bg-backgroundbg min-h-screen w-full bg-muted/40">
+    <div className="bg-backgroundbg min-h-screen w-full">
       <Navbar />
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14 h-screen justify-center">
         <header
