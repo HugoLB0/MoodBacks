@@ -144,7 +144,7 @@ export default function Dashboard() {
             </SheetContent>
           </Sheet>
         </header>
-        <div className="flex justify-end"><h1 className="mr-32 text-3xl bg-[#363049] text-[#D174DB] py-2 px-8 rounded-full font-[Candu] uppercase">Nike</h1></div>
+        <div className="flex justify-end"><Image className="w-32 mr-8" src="/assets/logo_nike.png" width={1220} height={448} alt="logo nike" /></div>
         <main
           id="main-content"
           className="grid gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 h-[800px]"
