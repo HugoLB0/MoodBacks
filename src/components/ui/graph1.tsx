@@ -15,7 +15,7 @@ const data = [
   { score: 10, locationA: 10, locationB: 12 },
 ];
 
-export default class Example extends PureComponent {
+export default class Graph1 extends PureComponent {
   render() {
     return (
       <ResponsiveContainer width="100%" height="60%">

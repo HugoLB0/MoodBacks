@@ -37,7 +37,7 @@ const data = [
 
   ];
   
-  export default class Example extends PureComponent {
+  export default class Graph3 extends PureComponent {
     static demoUrl = 'https://codesandbox.io/s/simple-radar-chart-rjoc6';
   
     render() {
